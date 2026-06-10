@@ -25,4 +25,8 @@ export class AppController {
   getUserMessage() {
     console.log('message received in getUserMessage');
   }
+  @EventPattern('create-user')
+  getUserCreated() {
+    console.log('a user has been created');
+  }
 }
