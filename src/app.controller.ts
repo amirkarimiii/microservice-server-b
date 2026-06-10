@@ -6,8 +6,9 @@ import { MessagePattern } from '@nestjs/microservices';
 export class AppController {
   constructor(private readonly appService: AppService) {}
 
-  @MessagePattern()
+  @MessagePattern('get-user')
   getHello() {
+    console.log('message received');
     return {
       id: 1,
       name: 'ali',
