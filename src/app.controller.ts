@@ -7,11 +7,18 @@ export class AppController {
   constructor(private readonly appService: AppService) {}
 
   @MessagePattern('get-user')
-  getHello() {
-    console.log('message received');
+  getUser() {
+    console.log('message received in getUser');
     return {
       id: 1,
       name: 'ali',
+    };
+  }
+  @MessagePattern('get-user-by-id')
+  getUserById() {
+    console.log('message received in getUserById');
+    return {
+      id: 1,
     };
   }
 }
